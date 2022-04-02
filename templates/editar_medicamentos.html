@@ -92,7 +92,7 @@
               
             </div>
             <div class="card-body">
-              <form action="edicionMedicamentos/" method="POST">{% csrf_token %}
+              <form action="/editarMedicamentos/" method="POST">{% csrf_token %}
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputText4">ID</label>
@@ -111,7 +111,7 @@
                     <input type="date" class="form-control" id="fecha" name="fecha" value="{{medicamentos3.fecha}}" placeholder="" required>
                   </div>
                   <div class="form-group col-md-4">
-                    <button type="submit" class="btn btn-primary text-gray-300">Guardar</button>
+                    <button type="submit" class="btn btn-primary text-gray-300">Editar</button>
                   </div>
                 </div>
               </form>

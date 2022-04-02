@@ -3,7 +3,7 @@ from unicodedata import name
 from django import urls
 from django.urls import path 
 from django.urls import URLPattern, path
-from .views import  Home,Historial,Nota,HojaDiaria,Medicamentos,ListadoMedicamentos, RegistrarMedicamento, EditarMedicamentos, EdicionMedicamento, EliminarMedicamentos
+from .views import  Home,Historial,Nota,HojaDiaria,Medicamentos,ListadoMedicamentos, RegistrarMedicamento, EdicionMedicamento, EditarMedicamentos, EliminarMedicamentos
 
 urlpatterns = [
     path('index/',Home, name='index'),

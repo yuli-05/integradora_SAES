@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from todo.models import ListMedicamentos
 
 # Create your views here.
@@ -33,6 +33,7 @@ def RegistrarMedicamento(request):
        id=id, nombre=nombre, cantidad=cantidad, fecha=fecha)
     return redirect('/listadomedicamentos')
 
+
 def EdicionMedicamento(request, id):
     medicamentos3=ListMedicamentos.objects.get(id=id)
     return render(request, "editar_medicamentos.html", {"medicamentos3": medicamentos3})
@@ -43,13 +44,14 @@ def EditarMedicamentos(request):
     cantidad=request.POST['cantidad']
     fecha=request.POST['fecha']
 
-    medicamentos3=ListMedicamentos.objects.get(id=id)
-    medicamentos3.nombre = nombre
-    medicamentos3.cantidad = cantidad
-    medicamentos3.fecha = fecha
-    medicamentos3.save()
+    medicamentos4=ListMedicamentos.objects.get(id=id)
+    medicamentos4.nombre = nombre
+    medicamentos4.cantidad = cantidad
+    medicamentos4.fecha = fecha
+    medicamentos4.save()
 
     return redirect('/listadomedicamentos')
+
 
 
 def EliminarMedicamentos(request, id):
