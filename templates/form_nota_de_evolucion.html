@@ -1,0 +1,464 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Nota de Evolución</title>
+
+  <!-- Custom fonts for this template-->
+  <link rel="icon" href="{% static 'imagenes/saes2.png' %}">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <hr class="divider my-2">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-icon">
+          <i class="fas"></i>
+          <img src="{%static 'imagenes\halcon.png' %}" style="width: 180%">
+        </div>
+        <div class="sidebar-brand-text mx-3">Nota de Evolución</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="divider my-3">
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'todo:index' %}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+      
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Profile -->
+      <li class="nav-item">
+        <a class="nav-link" href="perfil.html">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Perfil</span></a>
+      </li>
+      
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Logout -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">
+          <i class="fas fa-fw fa-sign-out-alt"></i>
+          <span>Logout</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
+            <h1 class="h3 mb-0 text-gray-800">NUEVO REGISTRO</h1>
+          </div>          
+
+          <!-- Main Content Here -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">Ingrese los siguientes datos:</h6>
+              <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-save fa-sm text-white-50"></i> Save</a>
+            </div>
+            <div class="card-body">
+              <!--TABLA-->
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>
+                      <div class="form-group col-md-12">
+                        <label for="inputDate4">Fecha:</label>
+                        <input type="date" class="form-control" id="inputDate4" placeholder="">
+                      </div>
+                    </th>
+                    <th>
+                      <div class="form-group col-md-12">
+                        <label for="inputText4">Carrera:</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                      </div>
+                    </th>
+                    <th>
+                      <div class="form-group col-md-12">
+                        <label for="inputText4">Grupo:</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                      </div>
+                    </th>
+                    <th>
+                      <div class="form-group col-md-12">
+                        <label for="inputText4">Matricula:</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="inputText4">Nombre</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">Edad</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">Sexo</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">Dirección</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+
+                <!--TABLA-->
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>
+                      <div class="form-group col-md-12">
+                        <label for="inputText4">Peso:</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                      </div>
+                    </th>
+                    <th>
+                      <div class="form-group col-md-12">
+                        <label for="inputTextl4">Talla:</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                      </div>
+                    </th>
+                    <th>
+                      <div class="form-group col-md-12">
+                        <label for="inputText4">Presión:</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                      </div>
+                    </th>
+                    <th>
+                      <div class="form-group col-md-12">
+                        <label for="inputText4">Temperatura:</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+                <div class="form-group">
+                  <label for="inputAddress">Padecimiento Actual</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="">
+                </div>
+                  <h7 class="m-0 font-weight text-primary">Exploración Física</h7>
+                  <h1></h1>  
+                  <h7>ALERGIAS</h7>
+                  <form>
+                    <div class="form-row">
+                      <div class="form-group col-md-2">
+                        <label for="inputText4">¿Eres alérgico a algo?</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="inputText4">¿A que?</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <!--ESPACIO-->
+                      <div class="form-check"></div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Rinitis</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Estreñimiento</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Amigdalitis</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Poliuria</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Polipnea</label>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <!--ESPACIO-->
+                      <div class="form-check"></div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Otalgia</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Parasitosis</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Tos</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Polifagia</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Hipotermia</label>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <!--ESPACIO-->
+                      <div class="form-check"></div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Otorrea</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Palpitaciones</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Expectoración</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Polidipsia</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Convulsiones</label>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <!--ESPACIO-->
+                      <div class="form-check"></div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Hipoacusia</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Dolor precordial</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Asma</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Hemorragias</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Vómito</label>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <!--ESPACIO-->
+                      <div class="form-check"></div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Acufenos</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Disnea</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Disuria</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Equimosis</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Regurgitación</label>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <!--ESPACIO-->
+                      <div class="form-check"></div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Mareos</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Soplo cardiaco</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Litiasis</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Tiro</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Hipotermia</label>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <!--ESPACIO-->
+                      <div class="form-check"></div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Pirosis</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Sinusitis</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Venéreas</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Cefalea</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Estridor</label>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <!--ESPACIO-->
+                      <div class="form-check"></div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Diarrea</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Faringitis</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Prurito general</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Fosfenos</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Sibilancias</label>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <!--ESPACIO-->
+                      <div class="form-check"></div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Cianosis</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Aleteo nasal</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Anemia</label>
+                      </div>
+                      <div class="form-check col-md-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Rubicundez</label>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-5">
+                        <label for="inputText4">Otros</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="Especificar">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputText4">Plan</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputText4">Tratamiento</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                      </div>
+                    </div>
+                    <h7 class="m-0 font-weight text-primary">Referencias</h7>
+                    <div class="form-row">
+                      <div class="form-group col-md-2">
+                        <label for="inputText4">Si</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="inputText4">No</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                      </div>
+                      <div class="form-group col-md-8">
+                        <label for="inputText4">Institución a la que se refiere</label>
+                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                  </form>
+              </form>
+            </div>
+          </div>
+          
+          
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+</body>
+
+</html>

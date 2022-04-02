@@ -1,0 +1,798 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Historial Clinico</title>
+
+  <!-- Custom fonts for this template-->
+  <link rel="icon" href="{% static 'imagenes/saes2.png' %}">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <hr class="divider my-2">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-icon">
+          <i class="fas"></i>
+          <img src="{%static 'imagenes\halcon.png' %}" style="width: 165%">
+        </div>
+        <div class="sidebar-brand-text mx-3">Historial Clinico</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="divider my-3">
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'todo:index' %}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+      
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Profile -->
+      <li class="nav-item">
+        <a class="nav-link" href="perfil.html">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Perfil</span></a>
+      </li>
+      
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Logout -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">
+          <i class="fas fa-fw fa-sign-out-alt"></i>
+          <span>Logout</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
+            <h1 class="h3 mb-0 text-gray-800">NUEVO REGISTRO</h1>
+          </div>          
+
+          <!-- Ficha de identificación -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">Ficha de identificación:</h6>
+              <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-save fa-sm text-white-50"></i> Save</a>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputDate4">Fecha</label>
+                    <input type="date" class="form-control" id="inputDate4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">Apellidos</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">Nombre</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-2">
+                    <label for="inputText4">Edad</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-5">
+                    <label for="inputDate4">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" id="inputDate4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-5">
+                    <label for="inputText4">Lugar de nacimiento</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-2">
+                    <label for="inputText4">Sexo</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-5">
+                    <label for="inputText4">Estado civil</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-5">
+                    <label for="inputText4">Lugar de residencia</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-9">
+                    <label for="inputEmail4">Carrera</label>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="inputPassword4">Grupo</label>
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Derechohabiente a alguna institución</label>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">No. de afiliación</label>
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+          <!-- Antecedentes heredofamiliares -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">Antecedentes Heredofamiliares:</h6>
+            </div>
+            <div class="card-body">
+              <h7 class="m-0 font-weight text-primary">Selecciona aquellas enfermedades que hayan padecido o padezcan algunos de los familiares directos.</h7>
+              <form>
+                <div class="form-row">
+                  <!--ESPACIO-->
+                  <div class="form-check"></div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Enf. Cardiacas</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Hipertensión</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Convulsiones</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Cáncer</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Enf. Mentales</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <!--ESPACIO-->
+                  <div class="form-check"></div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Diabetes</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Enf. alérgicas</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Tuberculosis</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Antecedentes personales no patológicos -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">Antecedentes Personales No Patológicos:</h6>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-3">
+                    <label for="inputText4">Ingreso Mensual</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>CASA</th>
+                      <th>SERVICIOS</th>
+                      <th>CONSTRUCCIÓN</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <!--CASA-->
+                        <div class="form-group">
+                          <!--ESPACIO-->
+                          <div class="form-check"></div>
+                          <div class="form-check col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Propia</label>
+                          </div>
+                          <div class="form-check col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Rentada</label>
+                          </div>
+                          <div class="form-check col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Prestada</label>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                         <!--SERVICIOS-->
+                         <div class="form-group">
+                          <!--ESPACIO-->
+                          <div class="form-check"></div>
+                          <div class="form-check col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Agua</label>
+                          </div>
+                          <div class="form-check col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Luz</label>
+                          </div>
+                          <div class="form-check col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Drenaje</label>
+                          </div>
+                          <div class="form-check col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Teléfono</label>
+                          </div>
+                          <div class="form-check col-md-10">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Otros</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Especificar">
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <!--CONSTRUCCIÓN--> 
+                        <h7 class="m-0 font-weight text-primary">TECHO</h7>
+                        <div class="form-group">
+                          <!--ESPACIO-->
+                          <div class="form-check"></div>
+                          <div class="form-check col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Cemento</label>
+                          </div>
+                          <div class="form-check col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Lámina</label>
+                          </div>
+                        </div>
+                        <h7 class="m-0 font-weight text-primary">PAREDES</h7>
+                        <div class="form-group">
+                          <!--ESPACIO-->
+                          <div class="form-check"></div>
+                          <div class="form-check col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Block</label>
+                          </div>
+                          <div class="form-check col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Adobe</label>
+                          </div>
+                        </div>
+                        <h7 class="m-0 font-weight text-primary">PISO</h7>
+                        <div class="form-group">
+                          <!--ESPACIO-->
+                          <div class="form-check"></div>
+                          <div class="form-check col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Cemento</label>
+                          </div>
+                          <div class="form-check col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">Tierra</label>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="form-row">
+                  <div class="form-group col-md-3">
+                    <label for="inputText4">No. Cuartos</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="inputText4">No. Personas</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="inputText4">Habitan animales</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="inputText4">Cuáles</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-5">
+                    <label for="inputText4">Vacunas que te hayan puesto recientemente</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <h7 class="m-0 font-weight text-primary">HÁBITOS</h7>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Prácticas deporte?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Cuál?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Cuántas veces a la semana?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Fumas?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Edad de inicio?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Cuántos cigarros a la semana?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Consumes bebidas alcohólicas?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Edad de inicio?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Cantidad por semana?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Consumes drogas?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Edad de inicio?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Cuántas veces por semana?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-3">
+                    <label for="inputText4">Tipo de sangre</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Antecedentes Personales Patologicos -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">Antecedentes Personales Patológicos:</h6>
+            </div>
+            <div class="card-body">
+              <h7 class="m-0 font-weight text-primary">ANTECEDENTES QUIRÚRGICOS</h7>
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Te han operado alguna vez?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-8">
+                    <label for="inputText4">¿Tipo de cirugía realizada?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputDate4">¿Fecha de la cirugía?</label>
+                    <input type="date" class="form-control" id="inputDate4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-8">
+                    <label for="inputText4">¿En que institución fue?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <h7 class="m-0 font-weight text-primary">ANTECEDENTES ALÉRGICOS</h7>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Eres alérgico a algún medicamento?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-8">
+                    <label for="inputText4">¿A qué medicamento?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <h7 class="m-0 font-weight text-primary">ANTECEDENTES TRAUMÁTICOS</h7>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputText4">¿Haz sufrido algún accidente que ameritó hospitalización?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputText4">¿Tienes alguna secuela por ese accidente?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputText4">¿Facturas o luxaciones previas?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputText4">¿Hubo alguna complicación?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                </div>
+                <h7 class="m-0 font-weight text-primary">ANTECEDENTES TRANSFUNCIONALES</h7>
+                <div class="form-row">
+                  <div class="form-group col-md-5">
+                    <label for="inputText4">¿Te han realizado alguna transfusión sanguínea?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputDate4">¿En que fecha fue?</label>
+                    <input type="date" class="form-control" id="inputDate4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-5">
+                    <label for="inputText4">¿Motivo de la transfusión?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+          <!-- Enfermedades padecidas -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">Selecciona las enfermedades que padeces o has padecido</h6>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="form-row">
+                  <!--ESPACIO-->
+                  <div class="form-check"></div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Varicela</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Paperas</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Parasitosis</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Enf. Renales</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Tosferina</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <!--ESPACIO-->
+                  <div class="form-check"></div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Hepatitis</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Diabetes Mellitus</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Sarampión</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Tifoidea</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Hipertensión renal</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <!--ESPACIO-->
+                  <div class="form-check"></div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Rubeola</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Fiebre reumática</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Anemia</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Sinusitis</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Convulsiones</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <!--ESPACIO-->
+                  <div class="form-check"></div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Enf. Cardiacas</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputText4">¿Actualmente estás en tratamiento médico?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputText4">¿Tipo de tratamiento?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Antecedentes ginecobstetricos -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">Antecedentes Ginecobstétricos:</h6>
+            </div>
+            <div class="card-body">
+              <h7 class="m-0 font-weight text-primary">EXCLUSICO SEXO FEMENINO</h7>
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">Edad de la primera menstruación</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="inputText4">¿Periodo regular?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="inputText4">¿Cada cuántos días?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputText4">¿Días de duración?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">¿Te haz embarazado alguna vez?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputText4">¿Cuántas veces?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <h7 class="m-0 font-weight text-primary">Selecciona la opción correspondiente</h7>
+                <div class="form-row">
+                  <!--ESPACIO-->
+                  <div class="form-check"></div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Parto</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Cesárea</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Aborto</label>
+                  </div>
+                  <div class="form-check col-md-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">Legrado</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputText4">¿Utilizas algún método de planificación familiar?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputText4">¿Cuál?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputText4">¿Te has realizado el Papanicolaou?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputText4">¿Hace cuánto tiempo?</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Tratamiento actual -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">Tratmiento Actual:</h6>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="inputText4">Describa el tratamiemto medico actual del paciente</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <h7 class="m-0 font-weight text-primary">Exploración Física</h7>
+                <div class="form-row">
+                  <div class="form-group col-md-1">
+                    <label for="inputText4">Peso</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-1">
+                    <label for="inputText4">Talla</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputText4">IMC</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputText4">FC</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputText4">FR</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputText4">TA</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputText4">TEMP</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Aviso de urgencia -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">En caso de urgencia médica avisar a:</h6>
+            </div>
+            <div class="card-body">
+              <form>
+                <h7 class="m-0 font-weight text-primary">PERSONA UNO</h7>
+                <div class="form-row">
+                  <div class="form-group col-md-8">
+                    <label for="inputText4">Nombre</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">Parentesco</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-8">
+                    <label for="inputText4">Dirección</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">Teléfono</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <h7 class="m-0 font-weight text-primary">PERSONA DOS</h7>
+                <div class="form-row">
+                  <div class="form-group col-md-8">
+                    <label for="inputText4">Nombre</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">Parentesco</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-8">
+                    <label for="inputText4">Dirección</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputText4">Teléfono</label>
+                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group">
+                </div>
+              </form>
+            </div>
+          </div>
+          
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+</body>
+
+</html>
