@@ -3,7 +3,7 @@ from unicodedata import name
 from django import urls
 from django.urls import path 
 from django.urls import URLPattern, path
-from .views import  Home,Historial,Nota,HojaDiaria,Medicamentos,ListadoMedicamentos, RegistrarMedicamento, EdicionMedicamento, EditarMedicamentos, EliminarMedicamentos
+from .views import  Home,Historial,Nota,HojaDiaria,Medicamentos,ListadoMedicamentos, RegistrarMedicamento, EdicionMedicamento, EditarMedicamentos, EliminarMedicamentos, ListadoNota
 
 urlpatterns = [
     path('index/',Home, name='index'),
@@ -16,5 +16,6 @@ urlpatterns = [
     path('edicionMedicamentos/<int:id>', EdicionMedicamento, name='edicionMedicamentos'),
     path('editarMedicamentos/', EditarMedicamentos, name='editarMedicamentos'),
     path('eliminarMedicamentos/<int:id>', EliminarMedicamentos, name='eliminarMedicamentos'),
+    path('listadohoja/', ListadoNota, name='listadohoja'),
 
 ]

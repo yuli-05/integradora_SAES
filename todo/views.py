@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from todo.models import ListMedicamentos
+from todo.models import ListMedicamentos,NotaDeEvolucion
 
 # Create your views here.
 
@@ -58,3 +58,7 @@ def EliminarMedicamentos(request, id):
     medicamentoss=ListMedicamentos.objects.get(id=id)
     medicamentoss.delete()
     return redirect('/listadomedicamentos')
+
+def ListadoNota(request):
+    nota = NotaDeEvolucion.objects.all()
+    return render(request, 'listado_nota.html', {"nota1": nota})

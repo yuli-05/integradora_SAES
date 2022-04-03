@@ -37,7 +37,7 @@
           <i class="fas"></i>
           <img src="{% static 'imagenes\halcon.png' %}" style="width: 500%">
         </div>
-        <div class="sidebar-brand-text mx-3">LISTADO DE MEDICAMENTOS</div>
+        <div class="sidebar-brand-text mx-3">LISTADO DE NOTAS DE EVOLUCIÓN</div>
       </a>
 
       <!-- Divider -->
@@ -84,7 +84,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
-            <h1 class="h3 mb-0 text-gray-800">LISTADO DE MEDICAMENTO</h1>
+            <h1 class="h3 mb-0 text-gray-800">LISTADO DE Notas De Evolución</h1>
           </div>          
 
     <div class="row">
@@ -96,21 +96,25 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre del medicamento</th>
-                        <th>Cantidad</th>
-                        <th>Fecha de Caducidad</th>
+                        <th>Fecha</th>
+                        <th>Nombre</th>
+                        <th>Carrera</th>
+                        <th>Grupo</th>
+                        <th>Matricula</th>
                         <th colspan="2">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for c in medicamentos2 %}
+                    {% for c in nota1 %}
                     <tr>
                         <td>{{c.id}}</td>
-                        <td>{{c.nombre}}</td>
-                        <td>{{c.cantidad}}</td>
                         <td>{{c.fecha}}</td>
-                        <td><a href="{% url 'todo:edicionMedicamentos' c.id  %}" class="btn btn-info">Editar</a> </td>
-                        <td><a href="{% url 'todo:eliminarMedicamentos' c.id  %}"  class="btn btn-danger btnEliminacion">Eliminar</a> </td>
+                        <td>{{c.nombre}}</td>
+                        <td>{{c.carrera}}</td>
+                        <td>{{c.grupo}}</td>
+                        <td>{{c.matricula}}</td>
+                        <!--<td><a href="{% url 'todo:edicionMedicamentos' c.id  %}" class="btn btn-info">Editar</a> </td>
+                        <td><a href="{% url 'todo:eliminarMedicamentos' c.id  %}"  class="btn btn-danger btnEliminacion">Eliminar</a> </td>-->
                     </tr>
                     {% endfor %}
                 </tbody>
