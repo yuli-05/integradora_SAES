@@ -62,3 +62,31 @@ def EliminarMedicamentos(request, id):
 def ListadoNota(request):
     nota = NotaDeEvolucion.objects.all()
     return render(request, 'listado_nota.html', {"nota1": nota})
+
+def registrarCurso(request):
+    id=request.POST['id']
+    fecha=request.POST['fecha']
+    carrera=request.POST['carrera']
+    grupo=request.POST['grupo']
+    matricula=request.POST['matricula']
+    nombre=request.POST['nombre']
+    edad=request.POST['edad']
+    sexo=request.POST['sexo']
+    direccion=request.POST['direccion']
+    peso=request.POST['peso']
+    talla=request.POST['talla']
+    presion=request.POST['presion']
+    temperatura=request.POST['temperatura']
+    padecimiento_actual=request.POST['padecimiento_actual']
+    alegias=request.POST['alegias']
+    cuales_alegias=request.POST['cuales_alegias']
+    exploracion_fisica=request.POST['exploracion_fisica']
+    otro=request.POST['otro']
+    plan=request.POST['plan']
+    tratamiento=request.POST['tratamiento']
+    referencias=request.POST['referencias']
+    Institución=request.POST['Institución']
+    
+    nota=NotaDeEvolucion.objects.create(
+      id=id,  fecha=fecha, carrera=carrera, grupo=grupo, matricula=matricula, nombre=nombre, edad=edad, sexo=sexo, direccion=direccion, peso=peso, talla=talla, presion=presion, temperatura=temperatura, padecimiento_actual=padecimiento_actual, alegias=alegias, cuales_alegias=cuales_alegias, exploracion_fisica=exploracion_fisica, otro=otro, plan=plan, tratamiento=tratamiento, referencias=referencias, Institución=Institución)
+    return redirect('/listadohoja')

@@ -77,7 +77,7 @@
 
       <!-- Main Content -->
       <div id="content">
-
+      <form action="/registrarNota/" method="POST">{% csrf_token %}
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
@@ -90,60 +90,64 @@
           <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
               <h6 class="m-0 font-weight-bold text-primary">Ingrese los siguientes datos:</h6>
-              <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-save fa-sm text-white-50"></i> Save</a>
+              <!--<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-save fa-sm text-white-50"></i> Save</a>-->
             </div>
             <div class="card-body">
               <!--TABLA-->
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
+                    <div class="form-group col-md-6">
+                      <label for="inputText4">ID</label>
+                      <input type="number" class="form-control" id="id" name="id" placeholder="" required>
+                    </div>
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputDate4">Fecha:</label>
-                        <input type="date" class="form-control" id="inputDate4" placeholder="">
+                        <input type="date" class="form-control" id="fecha" name="fecha" placeholder="">
                       </div>
                     </th>
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputText4">Carrera:</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                        <input type="text" class="form-control" id="carrera" name="carrera" placeholder="">
                       </div>
                     </th>
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputText4">Grupo:</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                        <input type="text" class="form-control" id="grupo" name="grupo" placeholder="">
                       </div>
                     </th>
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputText4">Matricula:</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                        <input type="text" class="form-control" id="matricula" name="matricula" placeholder="">
                       </div>
                     </th>
                   </tr>
                 </thead>
               </table>
 
-              <form>
+              <!--<form>-->
                 <div class="form-row">
                   <div class="form-group col-md-12">
                     <label for="inputText4">Nombre</label>
-                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-4">
                     <label for="inputText4">Edad</label>
-                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                    <input type="text" class="form-control" id="edad" name="edad" placeholder="">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputText4">Sexo</label>
-                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                    <input type="text" class="form-control" id="sexo" name="sexo" placeholder="">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputText4">Dirección</label>
-                    <input type="text" class="form-control" id="inputText4" placeholder="">
+                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="">
                   </div>
                 </div>
 
@@ -154,25 +158,25 @@
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputText4">Peso:</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                        <input type="text" class="form-control" id="peso" name="peso" placeholder="">
                       </div>
                     </th>
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputTextl4">Talla:</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                        <input type="text" class="form-control" id="talla" name="talla" placeholder="">
                       </div>
                     </th>
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputText4">Presión:</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                        <input type="text" class="form-control" id="presion" name="presion" placeholder="">
                       </div>
                     </th>
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputText4">Temperatura:</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                        <input type="text" class="form-control" id="temperatura" name="temperatura" placeholder="">
                       </div>
                     </th>
                   </tr>
@@ -180,26 +184,26 @@
               </table>
                 <div class="form-group">
                   <label for="inputAddress">Padecimiento Actual</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="">
+                  <input type="text" class="form-control" id="padecimiento_actual" name="padecimiento_actual" placeholder="">
                 </div>
                   <h7 class="m-0 font-weight text-primary">Exploración Física</h7>
                   <h1></h1>  
                   <h7>ALERGIAS</h7>
-                  <form>
+                  <!--<form>-->
                     <div class="form-row">
                       <div class="form-group col-md-2">
                         <label for="inputText4">¿Eres alérgico a algo?</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="Si / No">
+                        <input type="text" class="form-control" id="alegias" name="alegias" placeholder="Si / No">
                       </div>
                       <div class="form-group col-md-2">
                         <label for="inputText4">¿A que?</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                        <input type="text" class="form-control" id="cuales_alegias" name="cuales_alegias" placeholder="">
                       </div>
                     </div>
                     <div class="form-row">
                       <div class="form-group col-md-2">
                         <label for="inputText4">Explaracion Fisica</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                        <input type="text" class="form-control" id="exploracion_fisica" name="exploracion_fisica" placeholder="">
                       </div>
                     </div>
                     <!--<div class="form-row">
@@ -412,33 +416,36 @@
                     <div class="form-row">
                       <div class="form-group col-md-5">
                         <label for="inputText4">Otros</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="Especificar">
+                        <input type="text" class="form-control" id="otro" name="otro" placeholder="Especificar">
                       </div>
                     </div>
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputText4">Plan</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                        <input type="text" class="form-control" id="plan" name="plan" placeholder="">
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputText4">Tratamiento</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                        <input type="text" class="form-control" id="tratamiento" name="tratamiento" placeholder="">
                       </div>
                     </div>
                     <h7 class="m-0 font-weight text-primary">Referencias</h7>
                     <div class="form-row">
                       <div class="form-group col-md-2">
                         <label for="inputText4">Si/No</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                        <input type="text" class="form-control" id="referencias" name="referencias" placeholder="">
                       </div>
                       <div class="form-group col-md-8">
                         <label for="inputText4">Institución a la que se refiere</label>
-                        <input type="text" class="form-control" id="inputText4" placeholder="">
+                        <input type="text" class="form-control" id="Institución" name="Institución" placeholder="">
                       </div>
                     </div>
                     <div class="form-group">
                     </div>
-                  </form>
+                    <div class="form-group col-md-4">
+                      <button type="submit" class="btn btn-primary text-gray-300">Guardar</button>
+                    </div>
+                  <!--</form>-->
               </form>
             </div>
           </div>
