@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% block head %}
+            <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css"/>
+            <link rel="stylesheet" href="plugins/responsive-2.2.3/css/responsive.bootstrap4.min.css"/>
+            <script src="js/jquery.dataTables.js"></script>
+            <script src="js/dataTables.bootstrap4.min.js"></script>
+            <script src="js/dataTables.responsive.min.js"></script>
+            <script src="js/responsive.bootstrap4.min.js"></script>
+
+              <script type="application/javascript">
+                $(function () {
+                  $('#data').DataTable({
+                    esponsive: true,
+                    autoWidth: false
+                  });
+                });
+              </script>
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}
+
+
+
+</html>
