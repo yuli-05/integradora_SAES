@@ -90,3 +90,8 @@ def registrarCurso(request):
     nota=NotaDeEvolucion.objects.create(
       id=id,  fecha=fecha, carrera=carrera, grupo=grupo, matricula=matricula, nombre=nombre, edad=edad, sexo=sexo, direccion=direccion, peso=peso, talla=talla, presion=presion, temperatura=temperatura, padecimiento_actual=padecimiento_actual, alegias=alegias, cuales_alegias=cuales_alegias, exploracion_fisica=exploracion_fisica, otro=otro, plan=plan, tratamiento=tratamiento, referencias=referencias, Institución=Institución)
     return redirect('/listadohoja')
+
+def EliminarNota(request, id):
+    nota2=NotaDeEvolucion.objects.get(id=id)
+    nota2.delete()
+    return redirect('/listadohoja')
