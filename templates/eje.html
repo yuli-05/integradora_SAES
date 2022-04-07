@@ -1,0 +1,183 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Bitácora Medicamentos</title>
+
+  <!-- Custom fonts for this template-->
+  <link rel="icon" href="{% static 'imagenes/saes2.png' %}">
+  
+  <!-- Custom styles for this template-->
+  <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+  <script src="{% static 'js/gestionCursos.js' %}"></script>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+  
+
+</head>
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <hr class="divider my-2">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-icon">
+          <i class="fas"></i>
+          <img src="{% static 'imagenes\halcon.png' %}" style="width: 500%">
+        </div>
+        <div class="sidebar-brand-text mx-3">LISTADO DE MEDICAMENTOS</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="divider my-3">
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'todo:index' %}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+      
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Profile -->
+      <li class="nav-item">
+        <a class="nav-link" href="perfil.html">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Perfil</span></a>
+      </li>
+      
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Logout -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">
+          <i class="fas fa-fw fa-sign-out-alt"></i>
+          <span>Logout</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
+            <h1 class="h3 mb-0 text-gray-800">LISTADO DE MEDICAMENTO</h1>
+          </div>          
+
+    <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">      
+        <div class="table-responsive py-2">
+            <Table id="example" name="example" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre del medicamento</th>
+                        <th>Cantidad</th>
+                        <th>Fecha de Caducidad</th>
+                        <th colspan="3">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in medicamentos2 %}
+              
+                    <tr>
+                        <td>{{c.id}}</td>
+                        <td>{{c.nombre}}</td>
+                        <td>{{c.cantidad}}</td>
+                        <td>{{c.fecha}}</td>
+                        <td><a href="{% url 'todo:edicionMedicamentos' c.id  %}" class="btn btn-info">Editar</a> </td>
+                        <td><a href="{% url 'todo:eliminarMedicamentos' c.id  %}"  class="btn btn-danger btnEliminacion">Eliminar</a> </td>
+                        <td><a href="{% url 'todo:viewMedicamentos' c.id  %}" class="btn btn-success">View</a> </td>
+                        
+                    </tr>
+                    {% endfor %}
+                    <!--DataTable-->
+                    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.5/b-2.2.2/fh-3.2.2/kt-2.6.4/rg-1.1.4/sc-2.0.5/sb-1.3.2/sp-2.0.0/sl-1.3.4/datatables.min.css"/>
+ 
+                    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.5/b-2.2.2/fh-3.2.2/kt-2.6.4/rg-1.1.4/sc-2.0.5/sb-1.3.2/sp-2.0.0/sl-1.3.4/datatables.min.js"></script>
+
+
+                    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+                    
+
+                    <script>
+                      $(document).ready(function() {
+                        $('#example').DataTable();
+                      } );
+                    </script>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- DataTables CSS 
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
+
+<!-- Jquery 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Bootstrap & Popper 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+ 
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+ 
+<script>
+  $(document).ready(function() {
+    $('#myTable').DataTable();
+} );
+</script>-->
+<!--<link rel="stylesheet" href='https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css'>
+
+<link rel="stylesheet" href="{% static 'datatables/datatables.min.css' %}">
+<link rel="stylesheet" href="{% static 'datatables/datatables.css' %}">
+<link rel="stylesheet" href="{% static 'datatables/css/dataTables.bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'datatables/css/dataTables.bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'datatables/css/dataTables.foundation.min.css' %}">
+<link rel="stylesheet" href="{% static 'datatables/css/jquery.dataTables.css' %}">
+<link rel="stylesheet" href="{% static 'datatables/plugins/bootstrap-4-4.1.1/css/bootstrap.css' %}">
+
+<script src="{% static 'datatables/datatables.js' %}"></script>
+<script src="{% static 'datatables/datatables.min.js' %}"></script>
+<script src="{% static 'datatables/dataTables.bootstrap' %}"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>-->
+
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+
+
+</html>  

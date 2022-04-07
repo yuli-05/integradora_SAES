@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from todo.models import ListMedicamentos,NotaDeEvolucion
-
+from datetime import datetime
 # Create your views here.
 
 def Home(request):
@@ -48,6 +48,7 @@ def EditarMedicamentos(request):
     medicamentos4.nombre = nombre
     medicamentos4.cantidad = cantidad
     medicamentos4.fecha = fecha
+    #medicamentos4 = fecha.strftime("%d-%m-%y")
     medicamentos4.save()
 
     return redirect('/listadomedicamentos')

@@ -16,17 +16,11 @@
   <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
   <script src="{% static 'js/gestionCursos.js' %}"></script>
 
-  <link rel="stylesheet" href='https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css'>
-  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 
-  <script>
-    $(document).ready( function () {
-      $('#mytable').DataTable();
-    } );
-    </script>
+  
+
 </head>
-<body id="page-top">
-
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -90,70 +84,58 @@
             <h1 class="h3 mb-0 text-gray-800">LISTADO DE MEDICAMENTO</h1>
           </div>          
 
-    <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">      
-        <div class="table-responsive py-2">
-            <Table id="myTable" class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre del medicamento</th>
-                        <th>Cantidad</th>
-                        <th>Fecha de Caducidad</th>
-                        <th colspan="3">Opciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for c in medicamentos2 %}
-              
-                    <tr>
-                        <td>{{c.id}}</td>
-                        <td>{{c.nombre}}</td>
-                        <td>{{c.cantidad}}</td>
-                        <td>{{c.fecha}}</td>
-                        <td><a href="{% url 'todo:edicionMedicamentos' c.id  %}" class="btn btn-info">Editar</a> </td>
-                        <td><a href="{% url 'todo:eliminarMedicamentos' c.id  %}"  class="btn btn-danger btnEliminacion">Eliminar</a> </td>
-                        <td><a href="{% url 'todo:viewMedicamentos' c.id  %}" class="btn btn-success">View</a> </td>
-                        
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-<!-- DataTables CSS 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
 
-<!-- Jquery 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- Bootstrap & Popper 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<table id="example" class="display" style="width:100%">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre del medicamento</th>
+      <th>Cantidad</th>
+      <th>Fecha de Caducidad</th>
+      <th>Editar</th>
+      <th>Borrar</th>
+      <th>Vista</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in medicamentos2 %}
+    <tr>
+      
+      <td>{{c.id}}</td>
+      <td>{{c.nombre}}</td>
+      <td>{{c.cantidad}}</td>
+      <td>{{c.fecha}}</td>
+      <td>
+        <a href="{% url 'todo:edicionMedicamentos' c.id  %}" class="btn btn-info">Editar</a>
+      </td>
+      <td>
+        <a href="{% url 'todo:eliminarMedicamentos' c.id  %}" class="btn btn-danger btnEliminacion">Borrar</a>
+      </td>
+      <td>
+        <a href="{% url 'todo:viewMedicamentos' c.id  %}" class="btn btn-success"">Vista</a>
+      </td>
+      
+  </tr>
+  {% endfor %}
+</table>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.5/b-2.2.2/fh-3.2.2/kt-2.6.4/rg-1.1.4/sc-2.0.5/sb-1.3.2/sp-2.0.0/sl-1.3.4/datatables.min.css"/>
  
-<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
- 
-<script>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.5/b-2.2.2/fh-3.2.2/kt-2.6.4/rg-1.1.4/sc-2.0.5/sb-1.3.2/sp-2.0.0/sl-1.3.4/datatables.min.js"></script>
+
+
+  <script>
   $(document).ready(function() {
-    $('#myTable').DataTable();
+    $('#example').DataTable();
 } );
-</script>-->
-<!--<link rel="stylesheet" href='https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css'>
-
-<link rel="stylesheet" href="{% static 'datatables/datatables.min.css' %}">
-<link rel="stylesheet" href="{% static 'datatables/datatables.css' %}">
-<link rel="stylesheet" href="{% static 'datatables/css/dataTables.bootstrap.css' %}">
-<link rel="stylesheet" href="{% static 'datatables/css/dataTables.bootstrap.min.css' %}">
-<link rel="stylesheet" href="{% static 'datatables/css/dataTables.foundation.min.css' %}">
-<link rel="stylesheet" href="{% static 'datatables/css/jquery.dataTables.css' %}">
-<link rel="stylesheet" href="{% static 'datatables/plugins/bootstrap-4-4.1.1/css/bootstrap.css' %}">
-
-<script src="{% static 'datatables/datatables.js' %}"></script>
-<script src="{% static 'datatables/datatables.min.js' %}"></script>
-<script src="{% static 'datatables/dataTables.bootstrap' %}"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>-->
-
+</script>
+</table>
 
 </div>
 <!-- /.container-fluid -->
