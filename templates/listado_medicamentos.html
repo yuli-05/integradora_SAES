@@ -100,7 +100,7 @@
                         <th>Nombre del medicamento</th>
                         <th>Cantidad</th>
                         <th>Fecha de Caducidad</th>
-                        <th colspan="2">Opciones</th>
+                        <th colspan="3">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -113,6 +113,8 @@
                         <td>{{c.fecha}}</td>
                         <td><a href="{% url 'todo:edicionMedicamentos' c.id  %}" class="btn btn-info">Editar</a> </td>
                         <td><a href="{% url 'todo:eliminarMedicamentos' c.id  %}"  class="btn btn-danger btnEliminacion">Eliminar</a> </td>
+                        <td><a href="{% url 'todo:viewMedicamentos' c.id  %}" class="btn btn-success">View</a> </td>
+                        
                     </tr>
                     {% endfor %}
                 </tbody>

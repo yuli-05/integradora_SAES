@@ -59,6 +59,10 @@ def EliminarMedicamentos(request, id):
     medicamentoss.delete()
     return redirect('/listadomedicamentos')
 
+def ViewMedicamento(request, id):
+    medicamentos3=ListMedicamentos.objects.get(id=id)
+    return render(request, "view_medicamentos.html", {"medicamentos3": medicamentos3})
+
 def ListadoNota(request):
     nota = NotaDeEvolucion.objects.all()
     return render(request, 'listado_nota.html', {"nota1": nota})
@@ -145,6 +149,9 @@ def editarNota(request):
     nota3.save()
     return redirect('/listadohoja')
 
+def ViewNota(request, id):
+    nota3=NotaDeEvolucion.objects.get(id=id)
+    return render(request, "view_nota.html", {"nota3": nota3})
 
 def EliminarNota(request, id):
     nota2=NotaDeEvolucion.objects.get(id=id)

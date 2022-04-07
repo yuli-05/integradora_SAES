@@ -77,19 +77,19 @@
 
       <!-- Main Content -->
       <div id="content">
-      <form action="/editarNota/" method="POST">{% csrf_token %}
+      <form method="POST">{% csrf_token %}
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
-            <h1 class="h3 mb-0 text-gray-800">EDITAR</h1>
+            <h1 class="h3 mb-0 text-gray-800">View</h1>
           </div>          
 
           <!-- Main Content Here -->
           <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-              <h6 class="m-0 font-weight-bold text-primary">Ingrese los siguientes datos:</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Vista de los datos</h6>
               <!--<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i class="fas fa-save fa-sm text-white-50"></i> Save</a>-->
             </div>
             <div class="card-body">
@@ -104,25 +104,25 @@
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputDate4">Fecha:</label>
-                        <input type="date" class="form-control" id="fecha" name="fecha"  value="{{nota3.fecha}}" placeholder="">
+                        <input type="date" class="form-control" id="fecha" name="fecha" readonly value="{{nota3.fecha}}" placeholder="">
                       </div>
                     </th>
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputText4">Carrera:</label>
-                        <input type="text" class="form-control" id="carrera" name="carrera"  value="{{nota3.carrera}}" placeholder="">
+                        <input type="text" class="form-control" id="carrera" name="carrera" readonly value="{{nota3.carrera}}" placeholder="">
                       </div>
                     </th>
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputText4">Grupo:</label>
-                        <input type="text" class="form-control" id="grupo" name="grupo"  value="{{nota3.grupo}}" placeholder="">
+                        <input type="text" class="form-control" id="grupo" name="grupo" readonly value="{{nota3.grupo}}" placeholder="">
                       </div>
                     </th>
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputText4">Matricula:</label>
-                        <input type="text" class="form-control" id="matricula" name="matricula"  value="{{nota3.matricula}}" placeholder="">
+                        <input type="text" class="form-control" id="matricula" name="matricula" readonly value="{{nota3.matricula}}" placeholder="">
                       </div>
                     </th>
                   </tr>
@@ -133,21 +133,21 @@
                 <div class="form-row">
                   <div class="form-group col-md-12">
                     <label for="inputText4">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre"  value="{{nota3.nombre}}" placeholder="">
+                    <input type="text" class="form-control" id="nombre" name="nombre" readonly value="{{nota3.nombre}}" placeholder="">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-4">
                     <label for="inputText4">Edad</label>
-                    <input type="text" class="form-control" id="edad" name="edad"  value="{{nota3.edad}}" placeholder="">
+                    <input type="text" class="form-control" id="edad" name="edad" readonly value="{{nota3.edad}}" placeholder="">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputText4">Sexo</label>
-                    <input type="text" class="form-control" id="sexo" name="sexo"  value="{{nota3.sexo}}" placeholder="">
+                    <input type="text" class="form-control" id="sexo" name="sexo" readonly value="{{nota3.sexo}}" placeholder="">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputText4">Dirección</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion"  value="{{nota3.direccion}}" placeholder="">
+                    <input type="text" class="form-control" id="direccion" name="direccion" readonly value="{{nota3.direccion}}" placeholder="">
                   </div>
                 </div>
 
@@ -158,25 +158,25 @@
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputText4">Peso:</label>
-                        <input type="text" class="form-control" id="peso" name="peso"  value="{{nota3.peso}}" placeholder="">
+                        <input type="text" class="form-control" id="peso" name="peso" readonly value="{{nota3.peso}}" placeholder="">
                       </div>
                     </th>
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputTextl4">Talla:</label>
-                        <input type="text" class="form-control" id="talla" name="talla"  value="{{nota3.talla}}" placeholder="">
+                        <input type="text" class="form-control" id="talla" name="talla" readonly value="{{nota3.talla}}" placeholder="">
                       </div>
                     </th>
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputText4">Presión:</label>
-                        <input type="text" class="form-control" id="presion" name="presion"  value="{{nota3.presion}}" placeholder="">
+                        <input type="text" class="form-control" id="presion" name="presion" readonly value="{{nota3.presion}}" placeholder="">
                       </div>
                     </th>
                     <th>
                       <div class="form-group col-md-12">
                         <label for="inputText4">Temperatura:</label>
-                        <input type="text" class="form-control" id="temperatura" name="temperatura"   value="{{nota3.temperatura}}" placeholder="">
+                        <input type="text" class="form-control" id="temperatura" name="temperatura" readonly value="{{nota3.temperatura}}" placeholder="">
                       </div>
                     </th>
                   </tr>
@@ -184,7 +184,7 @@
               </table>
                 <div class="form-group">
                   <label for="inputAddress">Padecimiento Actual</label>
-                  <input type="text" class="form-control" id="padecimiento_actual" name="padecimiento_actual"  value="{{nota3.padecimiento_actual}}" placeholder="">
+                  <input type="text" class="form-control" id="padecimiento_actual" name="padecimiento_actual" readonly value="{{nota3.padecimiento_actual}}" placeholder="">
                 </div>
                   <h7 class="m-0 font-weight text-primary">Exploración Física</h7>
                   <h1></h1>  
@@ -193,17 +193,17 @@
                     <div class="form-row">
                       <div class="form-group col-md-2">
                         <label for="inputText4">¿Eres alérgico a algo?</label>
-                        <input type="text" class="form-control" id="alegias" name="alegias"  value="{{nota3.alegias}}" placeholder="Si / No">
+                        <input type="text" class="form-control" id="alegias" name="alegias" readonly value="{{nota3.alegias}}" placeholder="Si / No">
                       </div>
                       <div class="form-group col-md-2">
                         <label for="inputText4">¿A que?</label>
-                        <input type="text" class="form-control" id="cuales_alegias" name="cuales_alegias"  value="{{nota3.cuales_alegias}}" placeholder="">
+                        <input type="text" class="form-control" id="cuales_alegias" name="cuales_alegias" readonly value="{{nota3.cuales_alegias}}" placeholder="">
                       </div>
                     </div>
                     <div class="form-row">
                       <div class="form-group col-md-2">
                         <label for="inputText4">Explaracion Fisica</label>
-                        <input type="text" class="form-control" id="exploracion_fisica" name="exploracion_fisica"  value="{{nota3.exploracion_fisica}}" placeholder="">
+                        <input type="text" class="form-control" id="exploracion_fisica" name="exploracion_fisica" readonly value="{{nota3.exploracion_fisica}}" placeholder="">
                       </div>
                     </div>
                     <!--<div class="form-row">
@@ -416,34 +416,31 @@
                     <div class="form-row">
                       <div class="form-group col-md-5">
                         <label for="inputText4">Otros</label>
-                        <input type="text" class="form-control" id="otro" name="otro"  value="{{nota3.otro}}"  placeholder="Especificar">
+                        <input type="text" class="form-control" id="otro" name="otro" readonly value="{{nota3.otro}}" readonly placeholder="Especificar">
                       </div>
                     </div>
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputText4">Plan</label>
-                        <input type="text" class="form-control" id="plan" name="plan"  value="{{nota3.plan}}" placeholder="">
+                        <input type="text" class="form-control" id="plan" name="plan" readonly value="{{nota3.plan}}" placeholder="">
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputText4">Tratamiento</label>
-                        <input type="text" class="form-control" id="tratamiento" name="tratamiento"  value="{{nota3.tratamiento}}" placeholder="">
+                        <input type="text" class="form-control" id="tratamiento" name="tratamiento" readonly value="{{nota3.tratamiento}}" placeholder="">
                       </div>
                     </div>
                     <h7 class="m-0 font-weight text-primary">Referencias</h7>
                     <div class="form-row">
                       <div class="form-group col-md-2">
                         <label for="inputText4">Si/No</label>
-                        <input type="text" class="form-control" id="referencias" name="referencias"  value="{{nota3.referencias}}" placeholder="">
+                        <input type="text" class="form-control" id="referencias" name="referencias" readonly value="{{nota3.referencias}}" placeholder="">
                       </div>
                       <div class="form-group col-md-8">
                         <label for="inputText4">Institución a la que se refiere</label>
-                        <input type="text" class="form-control" id="Institución" name="Institución"  value="{{nota3.Institución}}" placeholder="">
+                        <input type="text" class="form-control" id="Institución" name="Institución" readonly value="{{nota3.Institución}}" placeholder="">
                       </div>
                     </div>
                     <div class="form-group">
-                    </div>
-                    <div class="form-group col-md-4">
-                      <button type="submit" class="btn btn-primary text-gray-300">Guardar</button>
                     </div>
                     
                   <!--</form>-->
