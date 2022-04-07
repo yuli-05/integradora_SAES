@@ -113,7 +113,7 @@
                         <td>{{c.carrera}}</td>
                         <td>{{c.grupo}}</td>
                         <td>{{c.matricula}}</td>
-                        <!--<td><a href="{% url 'todo:edicionMedicamentos' c.id  %}" class="btn btn-info">Editar</a> </td>-->
+                        <td><a href="{% url 'todo:edicionNota' c.id  %}" class="btn btn-info">Editar</a> </td>
                         <td><a href="{% url 'todo:eliminarNota' c.id  %}"  class="btn btn-danger btnEliminacion">Eliminar</a> </td>
                     </tr>
                     {% endfor %}

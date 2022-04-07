@@ -91,6 +91,61 @@ def registrarCurso(request):
       id=id,  fecha=fecha, carrera=carrera, grupo=grupo, matricula=matricula, nombre=nombre, edad=edad, sexo=sexo, direccion=direccion, peso=peso, talla=talla, presion=presion, temperatura=temperatura, padecimiento_actual=padecimiento_actual, alegias=alegias, cuales_alegias=cuales_alegias, exploracion_fisica=exploracion_fisica, otro=otro, plan=plan, tratamiento=tratamiento, referencias=referencias, Institución=Institución)
     return redirect('/listadohoja')
 
+def EdicionNota(request, id):
+    nota3=NotaDeEvolucion.objects.get(id=id)
+    return render(request, "editar_nota.html", {"nota3": nota3})
+
+def editarNota(request):
+    id=request.POST['id']
+    fecha=request.POST['fecha']
+    carrera=request.POST['carrera']
+    grupo=request.POST['grupo']
+    matricula=request.POST['matricula']
+    nombre=request.POST['nombre']
+    edad=request.POST['edad']
+    sexo=request.POST['sexo']
+    direccion=request.POST['direccion']
+    peso=request.POST['peso']
+    talla=request.POST['talla']
+    presion=request.POST['presion']
+    temperatura=request.POST['temperatura']
+    padecimiento_actual=request.POST['padecimiento_actual']
+    alegias=request.POST['alegias']
+    cuales_alegias=request.POST['cuales_alegias']
+    exploracion_fisica=request.POST['exploracion_fisica']
+    otro=request.POST['otro']
+    plan=request.POST['plan']
+    tratamiento=request.POST['tratamiento']
+    referencias=request.POST['referencias']
+    Institución=request.POST['Institución']
+
+    nota3=NotaDeEvolucion.objects.get(id=id)
+    nota3.fecha = fecha
+    nota3.carrera = carrera
+    nota3.grupo = grupo
+    nota3.matricula = matricula
+    nota3.nombre = nombre
+    nota3.edad = edad
+    nota3.sexo = sexo
+    nota3.direccion= direccion
+    nota3.peso = peso
+    nota3.talla = talla
+    nota3.presion = presion
+    nota3.temperatura = temperatura
+    nota3.padecimiento_actual = padecimiento_actual
+    nota3.alegias = alegias
+    nota3.cuales_alegias = cuales_alegias
+    nota3.exploracion_fisica = exploracion_fisica
+    nota3.otro = otro
+    nota3.plan = plan
+    nota3.tratamiento = tratamiento
+    nota3.referencias = referencias
+    nota3.Institución = Institución
+
+    nota3.save()
+    return redirect('/listadohoja')
+
+
 def EliminarNota(request, id):
     nota2=NotaDeEvolucion.objects.get(id=id)
     nota2.delete()
